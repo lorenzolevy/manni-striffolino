@@ -2,9 +2,10 @@ import React, { Fragment } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { ThemeProvider } from "styled-components"
-import Theme from "../themes/theme"
+import { GlobalStyle } from "../primitives/GlobalStyles"
 
-import Header from "./header"
+import Theme from "../themes/theme"
+import Header from "../primitives/header"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -20,6 +21,7 @@ const Layout = ({ children }) => {
   return (
     <Fragment>
       <ThemeProvider theme={Theme}>
+        <GlobalStyle />
         <Header siteTitle={data.site.siteMetadata.title} />
         <div>
           <main>{children}</main>

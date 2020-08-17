@@ -1,9 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Layout from "../components/layout"
-import FluidImage from "../components/Image/FluidImage"
-import SEO from "../components/seo"
+import Layout from "../features/Layout"
+import FluidImage from "../features/FluidImage/FluidImage"
+import SEO from "../features/Seo"
 import { graphql } from "gatsby"
 
 export const query = graphql`
@@ -24,7 +24,7 @@ const IndexPage = ({ data }) => (
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+    <div>
       <FluidImage fluid={data.headshotOne.childImageSharp.fluid} />
     </div>
     <Link to="/page-2/">Go to page 2</Link> <br />
