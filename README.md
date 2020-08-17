@@ -1,3 +1,3 @@
-## Ola Forman Acting Portfolio
+## Gatbsy Starter SC
 
-A site built with gatsby to display the works of actress Ola Forman.
+A gatsby starter that deals with the hotloader error, sets up gfonts prefetching, and sets up globalStyles and themeing variables for Styled-Components.
