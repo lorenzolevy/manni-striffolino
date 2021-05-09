@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Ola Forman`,
-    description: `New graduate from Drama Studio London. Bilingual (Polish/English) and particularly passionate about Shakespeare and voice acting.`,
+    title: `Manni Striffolino`,
+    description: `Site description`,
     author: `@lorenzolevy`,
   },
   plugins: [
@@ -13,27 +13,12 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Montserrat`,
-            variants: [`400`, `700`],
-          },
-          {
-            family: `Arvo`,
-            variants: [`400`, `700`],
-          },
-        ],
-      },
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
+        name: `Manni Striffolino`,
         short_name: `starter`,
         start_url: `/`,
         background_color: `#663399`,

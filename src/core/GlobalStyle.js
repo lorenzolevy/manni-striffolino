@@ -8,4 +8,9 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+
+  html, body {
+    background-color: #35b1c9;
+  }
+
 `

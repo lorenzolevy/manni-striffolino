@@ -1,16 +1,16 @@
 import React from "react"
 import { Link } from "gatsby"
-
+import Img from "gatsby-image"
 import Layout from "../features/Layout"
-import FluidImage from "../features/FluidImage/FluidImage"
+
 import SEO from "../features/Seo"
 import { graphql } from "gatsby"
 
 export const query = graphql`
   query HomePageQuery {
-    headshotOne: file(relativePath: { eq: "ola-headshot1.jpg" }) {
+    hero: file(relativePath: { eq: "hero.png" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
+        fluid(maxWidth: 1100) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -21,13 +21,12 @@ export const query = graphql`
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div>
-      <FluidImage fluid={data.headshotOne.childImageSharp.fluid} />
+    <div style={{ maxWidth: "1100px" }}>
+      <Img
+        fluid={data.hero.childImageSharp.fluid}
+        style={{ width: "500px", minWidth: "100%" }}
+      />
     </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
   </Layout>
 )
 
