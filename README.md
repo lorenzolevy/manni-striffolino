@@ -1,3 +1,3 @@
-## Gatbsy Starter SC
+## Manni Striffolino
 
-A gatsby starter that deals with the hotloader error, sets up gfonts prefetching, and sets up globalStyles and themeing variables for Styled-Components.
+A gatsby website displaying art by Manni Striffolino.
