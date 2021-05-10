@@ -2,14 +2,12 @@ import React, { Fragment } from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
-import "@fortawesome/fontawesome-svg-core/styles.css"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { faInstagram } from "@fortawesome/free-brands-svg-icons"
 
 import Footer from "../../primitives/Footer"
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
 import { faBars, faTimes, faArrowLeft } from "@fortawesome/free-solid-svg-icons"
-import { config } from "@fortawesome/fontawesome-svg-core"
 
 import {
   LayoutWrapper,
@@ -18,7 +16,6 @@ import {
   TopNav,
 } from "./Layout.styles"
 
-config.autoAddCss = false
 library.add(faEnvelope, faBars, faTimes, faArrowLeft, faInstagram)
 
 const Layout = ({ children, isLanding, title }) => {

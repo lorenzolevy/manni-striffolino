@@ -11,7 +11,7 @@ const Footer = () => (
       >
         <SocialIcon className="insta" icon={["fab", "instagram"]} />
       </a>
-      <a href="mailto:striffolinoa713@gmail.com">
+      <a href="mailto:manni@mannistriffolino.com">
         <SocialIcon className="mailto" icon={["far", "envelope"]} />
       </a>
     </SocialRow>

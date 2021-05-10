@@ -39,14 +39,14 @@ const ImageLinks = ({ imgObjs }) => {
     <Container>
       <Link to="/digital/">
         <ButtonLink width="116px">
-          <Img fluid={imgObjs[0]} />
-          <Img fixed={imgObjs[2]} />
+          <Img fluid={imgObjs[0]} alt="Button to digital pieces" />
+          <Img fixed={imgObjs[2]} alt="Button to digital pieces" />
         </ButtonLink>
       </Link>
       <Link to="/traditional">
         <ButtonLink className="traditional" width="100px">
-          <Img fluid={imgObjs[1]} />
-          <Img fixed={imgObjs[3]} />
+          <Img fluid={imgObjs[1]} alt="Button to traditional pieces" />
+          <Img fixed={imgObjs[3]} alt="Button to traditional pieces" />
         </ButtonLink>
       </Link>
     </Container>
