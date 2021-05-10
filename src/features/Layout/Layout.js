@@ -1,34 +1,64 @@
 import React, { Fragment } from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
+import Img from "gatsby-image"
+import "@fortawesome/fontawesome-svg-core/styles.css"
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { faInstagram } from "@fortawesome/free-brands-svg-icons"
 
-import { LayoutWrapper, ContentWrapper } from "./Layout.styles"
+import Footer from "../../primitives/Footer"
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
+import { faBars, faTimes, faArrowLeft } from "@fortawesome/free-solid-svg-icons"
+import { config } from "@fortawesome/fontawesome-svg-core"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+import {
+  LayoutWrapper,
+  ContentWrapper,
+  StyledArrow,
+  TopNav,
+} from "./Layout.styles"
 
+config.autoAddCss = false
+library.add(faEnvelope, faBars, faTimes, faArrowLeft, faInstagram)
+
+const Layout = ({ children, isLanding, title }) => {
   return (
     <Fragment>
       <LayoutWrapper>
         <ContentWrapper>
-          <main>{children}</main>
+          <main
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            {!isLanding && (
+              <TopNav>
+                <Link to="/">
+                  <StyledArrow icon="arrow-left" />
+                </Link>
+                {!!title && <Img fixed={title} />}
+              </TopNav>
+            )}
+            {children}
+          </main>
         </ContentWrapper>
-        <footer>© {new Date().getFullYear()} Manni Striffolino</footer>
+        <Footer />
       </LayoutWrapper>
     </Fragment>
   )
 }
 
+Layout.defaultProps = {
+  isLanding: false,
+  title: null,
+}
+
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  isLanding: PropTypes.bool,
+  title: PropTypes.object,
 }
 
 export default Layout

@@ -1,5 +1,7 @@
 import React from "react"
-import { Link } from "gatsby"
+
+import Hero from "../primitives/Hero"
+import ImageLinks from "../primitives/ImageLinks"
 import Img from "gatsby-image"
 import Layout from "../features/Layout"
 
@@ -15,18 +17,51 @@ export const query = graphql`
         }
       }
     }
+    pencil: file(relativePath: { eq: "traditional_pencil_button.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    wacom: file(relativePath: { eq: "digital_pencil_button.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    digital: file(relativePath: { eq: "digital_button.png" }) {
+      childImageSharp {
+        fixed(width: 100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    traditional: file(relativePath: { eq: "traditional_button.png" }) {
+      childImageSharp {
+        fixed(width: 155) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
   }
 `
 
 const IndexPage = ({ data }) => (
-  <Layout>
+  <Layout isLanding>
     <SEO title="Home" />
-    <div style={{ maxWidth: "1100px" }}>
-      <Img
-        fluid={data.hero.childImageSharp.fluid}
-        style={{ width: "500px", minWidth: "100%" }}
-      />
-    </div>
+    <Hero>
+      <Img fluid={data.hero.childImageSharp.fluid} />
+    </Hero>
+    <ImageLinks
+      imgObjs={[
+        data.wacom.childImageSharp.fluid,
+        data.pencil.childImageSharp.fluid,
+        data.digital.childImageSharp.fixed,
+        data.traditional.childImageSharp.fixed,
+      ]}
+    />
   </Layout>
 )
 
